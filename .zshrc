@@ -1,0 +1,56 @@
+# .zshrc
+# Alexander Burdiss
+# Last updated 9/2/22
+
+# Color in the ls command
+export CLICOLOR=1
+alias ls='ls -G'
+alias ll='ls -lG'
+alias la='ls -laG'
+
+# zsh config helpers
+alias zc='vim ~/.zshrc'
+alias zs='source ~/.zshrc; echo ".zshrc sourced"'
+# M1 Mac stuff
+alias intel='arch -x86_64'
+
+# Locations
+alias be='cd /Users/alexanderburdiss/documents/ReactNativeApps/BrassExcerpts && pwd'
+alias sp='cd /Users/alexanderburdiss/documents/ReactNativeApps/ScalePractice && pwd'
+alias br='cd /Users/alexanderburdiss/documents/ReactNativeApps/BrassRoutines && pwd'
+alias bp='cd /Users/alexanderburdiss/documents/ReactWebsites/bedtimeproject.org && pwd'
+alias bps='cd /Users/alexanderburdiss/documents/ReactWebsites/btp-sanity && pwd'
+alias rc='cd /Users/alexanderburdiss/documents/HtmlWebsites/reloadcincy.com && pwd'
+alias ab='cd /Users/alexanderburdiss/documents/HtmlWebsites/alexanderburdiss.com && pwd'
+alias sb='cd /Users/alexanderburdiss/documents/HtmlWebsites/stigmon-burdiss && pwd'
+alias sr='cd /Users/alexanderburdiss/documents/HtmlWebsites/shelbyready.com && pwd'
+
+# Workflow improvements
+manprev() { man -t "$1" | open -fa Preview }
+alias cs='~/cht.sh'
+alias go='cd $(find ~ ~/Documents ~/Downloads ~/Desktop -mindepth 1 -maxdepth 1 -type d | fzf)'
+
+# Fun utilities
+alias linesofcode='git diff --shortstat `git hash-object -t tree /dev/null`'
+alias filecount='find . -type f | wc -l'
+
+# Colors and custom prompt info
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats ' %b'
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+# Colors: Light blue: 116, Dark Blue: 030, Pink: 162, Grey: 152
+username() {
+  echo "%F{116}%n%f"
+}
+directory() {
+  echo "%F{116}%1~%f"
+}
+gitStatus() {
+  echo "%F{030}${vcs_info_msg_0_}%f"
+}
+PROMPT='$(directory)$(gitStatus) %F{162}>%f %F{152}'
+RPROMPT="%F{152}%t%f"

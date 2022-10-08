@@ -63,3 +63,30 @@ vnoremap K :m '<-2<CR>gv=gv
 nnoremap J ddp
 nnoremap K ddkP
 
+" Plugin specific settings
+" NERD_Tree
+" enable line numbers
+let NERDTreeShowLineNumbers=1
+" Show hidden files in nerdtree
+let NERDTreeShowHidden=1
+" make sure relative line numbers are used
+autocmd FileType nerdtree setlocal relativenumber
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeFind<CR>
+
+" fzf
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>pf :Files<CR>
+
+" ALE
+let g:ale_fixers = {
+ \ 'javascript': ['eslint']
+ \ }
+let g:ale_sign_error = '✕'
+let g:ale_sign_warning = '⚠'
+let g:ale_fix_on_save = 1
+" Fix with Option-Shift-F (Binding from VSCode)
+nnoremap <A-Ï> :ALEFix<CR>
+" Fix files with prettier, and then ESLint.
+let b:ale_fixers = ['prettier', 'eslint']

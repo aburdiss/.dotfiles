@@ -1,6 +1,6 @@
 # .zshrc
 # Alexander Burdiss
-# Last updated 9/2/22
+# Last updated 10/8/22
 
 # Color in the ls command
 export CLICOLOR=1
@@ -29,10 +29,14 @@ alias sr='cd ~/Documents/HtmlWebsites/shelbyready.com && pwd'
 manprev() { man -t "$1" | open -fa Preview }
 alias cs='~/scripts/cht.sh'
 alias go='cd $(find ~ ~/Documents ~/Downloads ~/Desktop -mindepth 1 -maxdepth 1 -type d | fzf)'
+alias branch='~/scripts/brancher.sh'
 
 # Fun utilities
 alias linesofcode='git diff --shortstat `git hash-object -t tree /dev/null`'
 alias filecount='find . -type f | wc -l'
+
+# Program setup info
+CYPRESS_CRASH_REPORTS=0
 
 # Colors and custom prompt info
 # Load version control information

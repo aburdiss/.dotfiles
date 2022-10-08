@@ -15,19 +15,19 @@ alias zs='source ~/.zshrc; echo ".zshrc sourced"'
 alias intel='arch -x86_64'
 
 # Locations
-alias be='cd /Users/alexanderburdiss/documents/ReactNativeApps/BrassExcerpts && pwd'
-alias sp='cd /Users/alexanderburdiss/documents/ReactNativeApps/ScalePractice && pwd'
-alias br='cd /Users/alexanderburdiss/documents/ReactNativeApps/BrassRoutines && pwd'
-alias bp='cd /Users/alexanderburdiss/documents/ReactWebsites/bedtimeproject.org && pwd'
-alias bps='cd /Users/alexanderburdiss/documents/ReactWebsites/btp-sanity && pwd'
-alias rc='cd /Users/alexanderburdiss/documents/HtmlWebsites/reloadcincy.com && pwd'
-alias ab='cd /Users/alexanderburdiss/documents/HtmlWebsites/alexanderburdiss.com && pwd'
-alias sb='cd /Users/alexanderburdiss/documents/HtmlWebsites/stigmon-burdiss && pwd'
-alias sr='cd /Users/alexanderburdiss/documents/HtmlWebsites/shelbyready.com && pwd'
+alias be='cd ~/Documents/ReactNativeApps/BrassExcerpts && pwd'
+alias sp='cd ~/Documents/ReactNativeApps/ScalePractice && pwd'
+alias br='cd ~/Documents/ReactNativeApps/BrassRoutines && pwd'
+alias bp='cd ~/Documents/ReactWebsites/bedtimeproject.org && pwd'
+alias bps='cd ~/Documents/ReactWebsites/btp-sanity && pwd'
+alias rc='cd ~/Documents/HtmlWebsites/reloadcincy.com && pwd'
+alias ab='cd ~/Documents/HtmlWebsites/alexanderburdiss.com && pwd'
+alias sb='cd ~/Documents/HtmlWebsites/stigmon-burdiss && pwd'
+alias sr='cd ~/Documents/HtmlWebsites/shelbyready.com && pwd'
 
 # Workflow improvements
 manprev() { man -t "$1" | open -fa Preview }
-alias cs='~/cht.sh'
+alias cs='~/scripts/cht.sh'
 alias go='cd $(find ~ ~/Documents ~/Downloads ~/Desktop -mindepth 1 -maxdepth 1 -type d | fzf)'
 
 # Fun utilities

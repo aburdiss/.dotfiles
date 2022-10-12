@@ -1,5 +1,5 @@
 " Alexander Burdiss .vimrc
-" Last Modified 10/8/22
+" Last Modified 10/12/22
 
 " Appearance
 colorscheme codedark 
@@ -14,16 +14,17 @@ set scrolloff=6
 let g:netrw_liststyle = 3
 " Set line numbers
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+let g:netrw_banner = 0
 
 " Mode Settings
 " The following works with Apple default terminal only
-" let &t_SI.="\e[6 q" "SI = INSERT mode
-" let &t_SR.="\e[4 q" "SR = REPLACE mode
-" let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
+let &t_SI.="\e[6 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 " The following works with iTerm2
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+" let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " Cursor settings:
 "  1 -> blinking block
 "  2 -> solid block 
@@ -64,17 +65,6 @@ nnoremap J ddp
 nnoremap K ddkP
 
 " Plugin specific settings
-" NERD_Tree
-" enable line numbers
-let NERDTreeShowLineNumbers=1
-" Show hidden files in nerdtree
-let NERDTreeShowHidden=1
-" make sure relative line numbers are used
-autocmd FileType nerdtree setlocal relativenumber
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-n> :NERDTreeFind<CR>
-
 " fzf
 nnoremap <C-p> :GFiles<CR>
 nnoremap <leader>pf :Files<CR>

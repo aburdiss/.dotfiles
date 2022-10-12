@@ -1,6 +1,6 @@
 # .zshrc
 # Alexander Burdiss
-# Last updated 10/8/22
+# Last updated 10/12/22
 
 # Color in the ls command
 export CLICOLOR=1
@@ -24,6 +24,7 @@ alias rc='cd ~/Documents/HtmlWebsites/reloadcincy.com && pwd'
 alias ab='cd ~/Documents/HtmlWebsites/alexanderburdiss.com && pwd'
 alias sb='cd ~/Documents/HtmlWebsites/stigmon-burdiss && pwd'
 alias sr='cd ~/Documents/HtmlWebsites/shelbyready.com && pwd'
+alias uvco='cd ~/Documents/HtmlWebsites/uppervalleycommunityorchestra.com && pwd'
 
 # Workflow improvements
 manprev() { man -t "$1" | open -fa Preview }

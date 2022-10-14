@@ -8,6 +8,12 @@ alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -laG'
 
+# Use NeoVim if installed
+if command -v nvim &> /dev/null
+then
+  alias vim='nvim'
+fi
+
 # zsh config helpers
 alias zc='vim ~/.zshrc'
 alias zs='source ~/.zshrc; echo ".zshrc sourced"'

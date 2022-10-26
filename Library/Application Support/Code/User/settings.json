@@ -1,34 +1,61 @@
 {
+  "editor.minimap.enabled": false,
   "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
   "editor.guides.indentation": false,
+  "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.fontLigatures": true,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.lineNumbers": "relative",
+
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   "files.associations": {
     "*.svg": "html",
     "*.xml": "html"
   },
-  "editor.rulers": [80],
-  "eslint.alwaysShowStatus": true,
-  "editor.tabSize": 2,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "js/ts.implicitProjectConfig.checkJs": false,
-  "editor.formatOnSave": true,
-  "editor.fontLigatures": true,
   "files.exclude": {
     "**/.git": true,
     "**/.DS_Store": true
   },
-  "workbench.iconTheme": "vscode-icons",
+
+  "js/ts.implicitProjectConfig.checkJs": false,
+
   "keyboard.dispatch": "keyCode",
-  "editor.bracketPairColorization.enabled": false,
-  "editor.lineNumbers": "relative",
-  "vsicons.dontShowNewVersionMessage": true,
+
+  "workbench.iconTheme": "vscode-icons",
   "workbench.colorTheme": "Ayu Mirage",
   "workbench.activityBar.visible": false,
-  "editor.minimap.enabled": false,
-  "workbench.layoutControl.enabled": false
+  "workbench.layoutControl.enabled": false,
+
+  "eslint.alwaysShowStatus": true,
+  "vsicons.dontShowNewVersionMessage": true,
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+  ]
 }

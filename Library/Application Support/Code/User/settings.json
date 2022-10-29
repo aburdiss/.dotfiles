@@ -4,16 +4,38 @@
   "editor.guides.indentation": false,
   "editor.rulers": [80],
   "editor.tabSize": 2,
+  "editor.detectIndentation": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.fontLigatures": true,
   "editor.bracketPairColorization.enabled": false,
   "editor.lineNumbers": "relative",
+  "editor.scrollBeyondLastLine": false,
+  "editor.cursorBlinking": "solid",
+  "editor.insertSpaces": true,
 
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[twig]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
@@ -22,22 +44,49 @@
     "*.xml": "html"
   },
   "files.exclude": {
-    "**/.git": true,
-    "**/.DS_Store": true
+    "**/.git": false,
+    "**/.DS_Store": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.svn": true,
+    "**/Thumbs.db": true
   },
 
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "js/ts.implicitProjectConfig.checkJs": false,
 
-  "keyboard.dispatch": "keyCode",
+  "diffEditor.ignoreTrimWhitespace": false,
 
+  "keyboard.dispatch": "keyCode",
+  "breadcrumbs.enabled": false,
   "workbench.iconTheme": "vscode-icons",
-  "workbench.colorTheme": "Ayu Mirage",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.activityBar.visible": false,
   "workbench.layoutControl.enabled": false,
+  "zenMode.hideLineNumbers": false,
+
+  "emmet.includeLanguages": {
+    "twig": "html"
+  },
 
   "eslint.alwaysShowStatus": true,
+  "eslint.run": "onSave",
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+
   "vsicons.dontShowNewVersionMessage": true,
 
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.requireConfig": false,
+
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.visual": "block",
+  "vim.leader": "<space>",
+  "vim.hlsearch": true,
+  "vim.incsearch": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["J"],

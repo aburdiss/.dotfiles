@@ -21,16 +21,16 @@ alias zs='source ~/.zshrc; echo ".zshrc sourced"'
 alias intel='arch -x86_64'
 
 # Locations
-alias be='cd ~/Documents/ReactNativeApps/BrassExcerpts && pwd'
-alias sp='cd ~/Documents/ReactNativeApps/ScalePractice && pwd'
-alias br='cd ~/Documents/ReactNativeApps/BrassRoutines && pwd'
-alias bp='cd ~/Documents/ReactWebsites/bedtimeproject.org && pwd'
-alias bps='cd ~/Documents/ReactWebsites/btp-sanity && pwd'
-alias rc='cd ~/Documents/HtmlWebsites/reloadcincy.com && pwd'
-alias ab='cd ~/Documents/HtmlWebsites/alexanderburdiss.com && pwd'
-alias sb='cd ~/Documents/HtmlWebsites/stigmon-burdiss && pwd'
-alias sr='cd ~/Documents/HtmlWebsites/shelbyready.com && pwd'
-alias uvco='cd ~/Documents/HtmlWebsites/uppervalleycommunityorchestra.com && pwd'
+alias be='cd ~/Documents/ReactNativeApps/BrassExcerpts'
+alias sp='cd ~/Documents/ReactNativeApps/ScalePractice'
+alias br='cd ~/Documents/ReactNativeApps/BrassRoutines'
+alias bp='cd ~/Documents/ReactWebsites/bedtimeproject.org'
+alias bps='cd ~/Documents/ReactWebsites/btp-sanity'
+alias rc='cd ~/Documents/HtmlWebsites/reloadcincy.com'
+alias ab='cd ~/Documents/HtmlWebsites/alexanderburdiss.com'
+alias sb='cd ~/Documents/HtmlWebsites/stigmon-burdiss'
+alias sr='cd ~/Documents/HtmlWebsites/shelbyready.com'
+alias uvco='cd ~/Documents/HtmlWebsites/uppervalleycommunityorchestra.com'
 
 # Workflow improvements
 manprev() { man -t "$1" | open -fa Preview }
@@ -58,10 +58,38 @@ username() {
   echo "%F{116}%n%f"
 }
 directory() {
-  echo "%F{116}%1~%f"
+  echo "%F{116}%~%f"
 }
 gitStatus() {
   echo "%F{030}${vcs_info_msg_0_}%f"
 }
-PROMPT='$(directory)$(gitStatus) %F{162}>%f %F{152}'
+gitDirtyMark () {
+  # [[ -z $(git status --porcelain) ]] || echo "%F{162}*%f"
+
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    # Outputs a series of indicators based on the status of the
+    # working directory:
+    # + changes are staged and ready to commit
+    # * unstaged changes are present
+    # ? untracked files are present
+    # S changes have been stashed
+    # P local commits need to be pushed to the remote
+    gitStatus="$(git status --porcelain 2>/dev/null)"
+    output=''
+    [[ -n $(egrep '^[MADRC]' <<<"$gitStatus") ]] && output="$output+"
+    [[ -n $(egrep '^.[MD]' <<<"$gitStatus") ]] && output="$output*"
+    [[ -n $(egrep '^\?\?' <<<"$gitStatus") ]] && output="$output?"
+    [[ -n $(git stash list) ]] && output="${output}S"
+    [[ -n $(git log --branches --not --remotes) ]] && output="${output}P"
+    [[ -n $output ]] && output="%F{162}$output%f"
+    echo $output
+  fi
+}
+PROMPT='
+$(directory)$(gitStatus) $(gitDirtyMark)
+%F{162}>%f %F{152}'
 RPROMPT="%F{152}%t%f"
+
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools

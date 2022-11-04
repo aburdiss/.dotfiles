@@ -95,6 +95,14 @@
     {
       "before": ["K"],
       "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["H"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["editor.action.indentLines"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -105,6 +113,14 @@
     {
       "before": ["K"],
       "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["H"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["editor.action.indentLines"]
     }
   ]
 }

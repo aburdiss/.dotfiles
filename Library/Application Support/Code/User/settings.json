@@ -59,7 +59,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
 
   "keyboard.dispatch": "keyCode",
-  "breadcrumbs.enabled": false,
   "workbench.iconTheme": "vscode-icons",
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "workbench.activityBar.visible": false,

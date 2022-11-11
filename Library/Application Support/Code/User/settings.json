@@ -13,6 +13,7 @@
   "editor.scrollBeyondLastLine": false,
   "editor.cursorBlinking": "solid",
   "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
 
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"

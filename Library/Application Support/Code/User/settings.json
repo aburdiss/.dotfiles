@@ -15,6 +15,10 @@
   "editor.insertSpaces": true,
   "files.trimTrailingWhitespace": true,
 
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.tabCompletion": "on",
+
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -122,5 +126,6 @@
       "before": ["L"],
       "commands": ["editor.action.indentLines"]
     }
-  ]
+  ],
+  "window.zoomLevel": 1
 }

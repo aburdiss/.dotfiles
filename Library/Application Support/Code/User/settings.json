@@ -6,7 +6,7 @@
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.fontLigatures": true,
   "editor.bracketPairColorization.enabled": false,
   "editor.lineNumbers": "relative",
@@ -65,7 +65,6 @@
   "keyboard.dispatch": "keyCode",
   "workbench.iconTheme": "vscode-icons",
   "workbench.colorTheme": "Gruvbox Dark Hard",
-  "workbench.activityBar.visible": false,
   "workbench.layoutControl.enabled": false,
   "zenMode.hideLineNumbers": false,
 
@@ -127,5 +126,7 @@
       "commands": ["editor.action.indentLines"]
     }
   ],
-  "window.zoomLevel": 1
+  "window.commandCenter": false,
+  "window.zoomLevel": 1,
+  "workbench.activityBar.location": "hidden"
 }

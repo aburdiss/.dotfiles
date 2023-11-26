@@ -33,6 +33,7 @@ alias sb='cd ~/Documents/HtmlWebsites/stigmon-burdiss'
 alias sr='cd ~/Documents/HtmlWebsites/shelbyready.com'
 alias uvco='cd ~/Documents/HtmlWebsites/uvcorchestra.com'
 alias cj='cd ~/Documents/HtmlWebsites/courtney-jean.com'
+alias gl='cd ~/Documents/HtmlWebsites/thegriffinlegends.com'
 
 # Workflow improvements
 manprev() { man -t "$1" | open -fa Preview }

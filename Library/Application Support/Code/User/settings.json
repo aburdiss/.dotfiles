@@ -128,5 +128,8 @@
   ],
   "window.commandCenter": false,
   "window.zoomLevel": 1,
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "editor.stickyScroll.scrollWithEditor": false,
+  "workbench.tree.enableStickyScroll": false,
+  "editor.stickyScroll.enabled": false
 }

@@ -46,7 +46,8 @@
 
   "files.associations": {
     "*.svg": "html",
-    "*.xml": "html"
+    "*.xml": "html",
+    "*.mdx": "markdown"
   },
   "files.exclude": {
     "**/.git": false,

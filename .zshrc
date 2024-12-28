@@ -1,6 +1,6 @@
 # .zshrc
 # Alexander Burdiss
-# Last updated 10/12/22
+# Last updated 12/28/24
 
 # Color in the ls command
 export CLICOLOR=1
@@ -45,6 +45,9 @@ alias branch='~/scripts/brancher.sh'
 alias linesofcode='git diff --shortstat `git hash-object -t tree /dev/null`'
 alias filecount='find . -type f | wc -l'
 
+# Utils for courtney
+alias jobs='cd ~/Documents/ReactWebsites/job-search && npm run cy:run'
+
 # Program setup info
 CYPRESS_CRASH_REPORTS=0
 
@@ -58,13 +61,13 @@ zstyle ':vcs_info:git:*' formats ' %b'
 setopt PROMPT_SUBST
 # Colors: Light blue: 116, Dark Blue: 030, Pink: 162, Grey: 152
 username() {
-  echo "%F{116}%n%f"
+  echo "%F{106}%n%F{66}@%F{106}mac%f"
 }
 directory() {
-  echo "%F{116}%~%f"
+  echo "%F{066}%~%f"
 }
 gitStatus() {
-  echo "%F{030}${vcs_info_msg_0_}%f"
+  echo "%F{106}${vcs_info_msg_0_}%f"
 }
 gitDirtyMark () {
   # [[ -z $(git status --porcelain) ]] || echo "%F{162}*%f"
@@ -84,15 +87,21 @@ gitDirtyMark () {
     [[ -n $(egrep '^\?\?' <<<"$gitStatus") ]] && output="$output?"
     [[ -n $(git stash list) ]] && output="${output}S"
     [[ -n $(git log --branches --not --remotes) ]] && output="${output}P"
-    [[ -n $output ]] && output="%F{162}$output%f"
+    [[ -n $output ]] && output="%F{172}$output%f"
     echo $output
   fi
 }
 PROMPT='
-$(directory)$(gitStatus) $(gitDirtyMark)
-%F{162}>%f %F{152}'
-RPROMPT="%F{152}%t%f"
+$(username) $(directory)$(gitStatus) $(gitDirtyMark)
+%F{172}>%f '
+RPROMPT="%F{66}%t%f"
 
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
